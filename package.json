@@ -1,12 +1,12 @@
 {
-  "name": "website",
+  "name": "browser-ranker",
   "version": "0.1.0",
-  "description": "Zaratan website",
-  "repository": "github@zaratanDotWorld/website",
+  "description": "Browser Ranker",
+  "repository": "github@zaratanDotWorld/browserRanker",
   "author": "Daniel Kronovet (krono@zaratan.world)",
   "license": "UNLICENSED",
-  "homepage": "https://zaratan.world",
-  "bugs": "https://github.com/zaratanDotWorld/website/issues",
+  "homepage": "https://kronosapiens.github.io",
+  "bugs": "https://github.com/zaratanDotWorld/browserRanker/issues",
   "main": "pages/index.js",
   "scripts": {
     "dev": "next",

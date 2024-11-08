@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import Analytics from '../components/analytics';
 import Layout from '../components/layout';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,7 +15,6 @@ export  default function ({ Component, pageProps }) {
 
   return (
     <div>
-      <Analytics analyticsId='G-GC4C7YJ78Q' />
       <link href={fontsUrl} rel="stylesheet" />
 
       <Head>

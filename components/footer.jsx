@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import { kronosapiensUrl } from '../utils/constants';
-
 export default function () {
+  const kronosapiensUrl = "https://kronosapiens.github.io";
+
   return (
     <div className="text-center p-3 bg-light">
       &copy; { new Date().getFullYear() } <Link href={kronosapiensUrl}>Kronosapiens Labs</Link>
