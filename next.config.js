@@ -1,4 +1,5 @@
 module.exports = {
+  output: 'export',
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 's3.amazonaws.com'},
