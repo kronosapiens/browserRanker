@@ -5,7 +5,7 @@ export default function () {
 
   return (
     <div className="text-center p-3 bg-light">
-      &copy; { new Date().getFullYear() } <Link href={kronosapiensUrl}>Kronosapiens Labs</Link>
+      &copy; { new Date().getFullYear() } <Link href={kronosapiensUrl}>Iris Informatics</Link>
     </div>
   )
 }
