@@ -84,8 +84,8 @@ export default function () {
 
       <Row className="accent-green p-5">
         <Col />
-        <Col md={8} xl={6}>
-          <h5 className="text-center">Inputs</h5>
+        <Col md={6} xl={4}>
+          <h4 className="text-center">Inputs</h4>
           <ListGroup>
             {submittedFields.map((field, index) => (
               <ListGroup.Item key={index}>
@@ -134,11 +134,11 @@ export default function () {
 
       <Row className="p-5">
         <Col />
-        <Col md={8} xl={6}>
-          <h5 className="text-center">Ranking</h5>
-          <p className="text-center">
+        <Col md={6} xl={4}>
+          <h4 className="text-center">Ranking</h4>
+          <h5 className="text-center">
             <b>{rankings.slice().reverse().map(ranking => ranking.name).join(" ")}</b>
-          </p>
+          </h5>
           <ListGroup>
             {rankings.map((ranking, index) => (
               <ListGroup.Item key={index} className="text-center">
