@@ -79,6 +79,7 @@ export default function () {
       <Row className="accent-green p-5">
         <Col />
         <Col md={8} xl={6}>
+          <h5 className="text-center">Inputs</h5>
           <ListGroup>
           {submittedFields.map((field, index) => (
             <ListGroup.Item key={index}>
@@ -127,6 +128,10 @@ export default function () {
       <Row className="p-5">
         <Col />
         <Col md={8} xl={6}>
+          <h5 className="text-center">Ranking</h5>
+          <p className="text-center">
+            <b>{rankings.map(ranking => ranking.name).join(" ")}</b>
+          </p>
           <ListGroup>
             {rankings.map((ranking, index) => (
               <ListGroup.Item key={index} className="text-center">
