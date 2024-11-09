@@ -42,9 +42,15 @@ export default function () {
   };
 
   // Handle reset of local storage and submitted fields
-  const handleDelete = () => {
+  const handleReset = () => {
     localStorage.removeItem("submittedFields");
-    setSubmittedFields(submittedFields.slice(0, -1));
+    setSubmittedFields([]);
+  };
+
+  // Handle individual deletion of pairs
+  const handleDelete = (index) => {
+    const newSubmittedFields = submittedFields.filter((_, i) => i !== index);
+    setSubmittedFields(newSubmittedFields);
   };
 
   // Handle running the power ranker
@@ -68,7 +74,7 @@ export default function () {
         <Col>
           <Headpiece
             mainText="Power Ranker"
-            subText="Revealing The Concealed"
+            subText="Reveal The Concealed"
             icon="⚙️"
             color="green"
           />
@@ -81,10 +87,11 @@ export default function () {
         <Col md={8} xl={6}>
           <h5 className="text-center">Inputs</h5>
           <ListGroup>
-          {submittedFields.map((field, index) => (
-            <ListGroup.Item key={index}>
-              {field.item2} → {field.item1}
-            </ListGroup.Item>
+            {submittedFields.map((field, index) => (
+              <ListGroup.Item key={index}>
+                <Button variant="outline-danger" size="sm" onClick={() => handleDelete(index)}>x</Button>
+                &nbsp; {field.item2} → {field.item1}
+              </ListGroup.Item>
             ))}
           </ListGroup>
 
@@ -117,7 +124,7 @@ export default function () {
             ))}
             <div className="d-flex justify-content-center gap-2">
               <Button variant="primary" type="submit">Submit Pair</Button>
-              <Button variant="danger" onClick={handleDelete}>Delete Pair</Button>
+              <Button variant="danger" onClick={handleReset}>Reset Pairs</Button>
               <Button variant="success" onClick={handleRanking}>Get Ranking</Button>
             </div>
           </Form>
@@ -130,12 +137,12 @@ export default function () {
         <Col md={8} xl={6}>
           <h5 className="text-center">Ranking</h5>
           <p className="text-center">
-            <b>{rankings.map(ranking => ranking.name).join(" ")}</b>
+            <b>{rankings.slice().reverse().map(ranking => ranking.name).join(" ")}</b>
           </p>
           <ListGroup>
             {rankings.map((ranking, index) => (
               <ListGroup.Item key={index} className="text-center">
-                {index + 1}: <b>{ranking.name}</b> ({ranking.value.toFixed(2)})
+                {index + 1}: <b>{ranking.name}</b> ({ranking.value.toFixed(3)})
               </ListGroup.Item>
             ))}
           </ListGroup>
